@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -13,7 +12,11 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"], // Handles SCSS files
+      },
+      {
+        test: /\.css$/, // Handle CSS files
+        use: ["style-loader", "css-loader"], // Handles CSS imports
       },
       {
         test: /\.html$/,
